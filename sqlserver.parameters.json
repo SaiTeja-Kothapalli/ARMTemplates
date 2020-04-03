@@ -1,0 +1,25 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "adminUserName":{
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/<your-subscription-id>/resourceGroups/<your-resource-group>/providers/Microsoft.KeyVault/vaults/<your-keyvault-name>"
+                },
+                "secretName": "<your-secret-name>"
+            }
+            
+            
+        },
+        "adminPassword":{
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/<your-subscription-id>/resourceGroups/<your-resource-group>/providers/Microsoft.KeyVault/vaults/<your-keyvault-name>"
+                },
+                "secretName": "<your-secret-name>"
+            }
+
+        }
+    }
+}
