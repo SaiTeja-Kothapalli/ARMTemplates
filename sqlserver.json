@@ -3,10 +3,18 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "adminUserName":{
-            "type":"securestring"
+            "type":"securestring",
+            "metadata":{
+                "description":"Enter the adminUserName"
+            }
         },
         "adminPassword":{
-            "type":"securestring"
+            "type":"securestring",
+            "minLength": 3,
+            "maxLength": 24,
+            "metadata":{
+                "description":"Enter the adminUserPassword"
+            }
         }
     },
     "resources": [
@@ -15,9 +23,6 @@
             "type": "Microsoft.Sql/servers",
             "apiVersion": "2015-05-01-preview",
             "location": "[resourceGroup().location]",
-            "tags": {
-                "displayName": "sqlServer1"
-            },
             "properties": {
                 "administratorLogin": "[parameters('adminUserName')]",
                 "administratorLoginPassword": "[parameters('adminPassword')]"
