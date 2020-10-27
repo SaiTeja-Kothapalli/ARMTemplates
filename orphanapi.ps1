@@ -84,7 +84,7 @@ $connectorDictionary.Values | ForEach-Object{
     Write-Host $azureConnector.Id ' : ' $azureConnector.IsUsed
     if($azureConnector.IsUsed -eq 'FALSE')
     {
-        Write-Host $azureConnector.Id ' : is an unused'
+        Write-Host $azureConnector.Id ' : is unused'
     }
 }
 
